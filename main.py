@@ -1,36 +1,42 @@
 #Ejercicio 1
 cantidad_de_digitos = 0
 def digitos(numero_de_tarjeta: str) -> int:
-    while numero_de_tarjeta > 0:
-        numero_de_tarjeta = numero_de_tarjeta//10
-        cantidad_de_digitos +=1 
-        return
+    return len(numero_de_tarjeta)
 
 #Ejercicio 2
 def obtener_prefijo(numero_de_tarjeta: str,tamaño_prefijo: int) -> int:
-    tamaño_prefijo
-    
+    return int(numero_de_tarjeta[:tamaño_prefijo])
+
     return
 
 #Ejercicio 3
 def tipo_tarjeta(numero_de_tarjeta: str) -> str:
-    condicion_master = False #Pueden borrar el False y completar
-    condicion_visa   = False #Pueden borrar el False y completar
-    condicion_amex   = False #Pueden borrar el False y completar
+    x = obtener_prefijo(numero_de_tarjeta,2)
+    d = digitos(numero_de_tarjeta)
+    y = obtener_prefijo(numero_de_tarjeta,1)
+    condicion_master =  (x >= 51 and x <= 55) and d == 16   #Pueden borrar el False y completar
+    condicion_visa   =  y == 4 and (d == 13 or d == 16)          #Pueden borrar el False y completar
+    condicion_amex   = (x == 34 or x == 37) and d == 15       #Pueden borrar el False y completar
+   
     if condicion_master:
         return 'Mastercard'
+   
     elif condicion_visa:
         return 'Visa'
+  
     elif condicion_amex:
         return 'American Express'
+    else:
+        return 'Invalid'
+
 
 #Ejercicio 4
 def digitos_impares(numero_de_tarjeta : str) -> list[int]:
-    while numero_de_tarjeta > 0:
+    x = digitos(numero_de_tarjeta)
 
     #for numero_par in numero_de_tarjeta:
         
-        return
+    return
 
 #Ejercicio 5
 def digitos_pares(numero_de_tarjeta: str) -> list[int]:
