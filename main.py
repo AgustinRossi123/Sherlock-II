@@ -35,7 +35,11 @@ def digitos_impares(numero_de_tarjeta : str) -> list[int]:
     x = digitos(numero_de_tarjeta)
 
     #for numero_par in numero_de_tarjeta:
-        
+
+    for indice, digito in enumerate(str(x)):
+        if indice % 2 != 0:
+            return(int(digito))
+      
     return
 
 #Ejercicio 5
