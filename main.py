@@ -1,9 +1,15 @@
 #Ejercicio 1
+cantidad_de_digitos = 0
 def digitos(numero_de_tarjeta: str) -> int:
-    return
+    while numero_de_tarjeta > 0:
+        numero_de_tarjeta = numero_de_tarjeta//10
+        cantidad_de_digitos +=1 
+        return
 
 #Ejercicio 2
 def obtener_prefijo(numero_de_tarjeta: str,tamaño_prefijo: int) -> int:
+    tamaño_prefijo
+    
     return
 
 #Ejercicio 3
@@ -20,7 +26,11 @@ def tipo_tarjeta(numero_de_tarjeta: str) -> str:
 
 #Ejercicio 4
 def digitos_impares(numero_de_tarjeta : str) -> list[int]:
-    return
+    while numero_de_tarjeta > 0:
+
+    #for numero_par in numero_de_tarjeta:
+        
+        return
 
 #Ejercicio 5
 def digitos_pares(numero_de_tarjeta: str) -> list[int]:
