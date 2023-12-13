@@ -32,19 +32,37 @@ def tipo_tarjeta(numero_de_tarjeta: str) -> str:
 
 #Ejercicio 4
 def digitos_impares(numero_de_tarjeta : str) -> list[int]:
-    x = digitos(numero_de_tarjeta)
+    numero = int(numero_de_tarjeta)
 
-    #for numero_par in numero_de_tarjeta:
+    reversed_numero_string = str(numero)[::-1]
+    if type(numero) == int:
+        reversed_numero = int(reversed_numero_string)
+    numero_str = str(reversed_numero)
 
-    for indice, digito in enumerate(str(x)):
-        if indice % 2 != 0:
-            return(int(digito))
-      
-    return
+    list=[]
+
+    for i in range(0, len(numero_str), 2):
+        print(numero_str[i])
+        list.append(int(numero_str[i]))
+    
+    return(list)
 
 #Ejercicio 5
 def digitos_pares(numero_de_tarjeta: str) -> list[int]:
-    return
+    numero = int(numero_de_tarjeta)
+    reversed_numero_string = str(numero)[::-1]
+    if type(numero) == int:
+        reversed_numero = int(reversed_numero_string)
+    numero_str = str(reversed_numero)
+
+    list=[]
+
+    for i in range(1, len(numero_str), 2):
+        print(numero_str[i])
+        list.append(int(numero_str[i]))
+    
+    return(list)
+    
 
 #Ejercicio 6
 def sumar_digitos(lista_digitos : list[int]) -> int:
