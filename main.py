@@ -33,7 +33,6 @@ def tipo_tarjeta(numero_de_tarjeta: str) -> str:
 #Ejercicio 4
 def digitos_impares(numero_de_tarjeta : str) -> list[int]:
     numero = int(numero_de_tarjeta)
-
     reversed_numero_string = str(numero)[::-1]
     if type(numero) == int:
         reversed_numero = int(reversed_numero_string)
@@ -66,11 +65,20 @@ def digitos_pares(numero_de_tarjeta: str) -> list[int]:
 
 #Ejercicio 6
 def sumar_digitos(lista_digitos : list[int]) -> int:
-    return
+    l = [str(x) for x in lista_digitos]
+    lista_digitos = []
+    for x in l:
+        lista_digitos.extend([int(e) for e in x])
+    return sum(lista_digitos)
 
 #Ejercicio 7
 def luhn(numero_de_tarjeta :  str) -> bool:
-    return
+    pares = digitos_pares(numero_de_tarjeta)
+    suma_pares = sumar_digitos( [x* 2 for x in pares] )
+    suma_impares = sum(digitos_impares(numero_de_tarjeta))
+    dig = (suma_pares + suma_impares)%10
+    return dig
+
 
 #Ejercicio 8
 def validar_tarjeta(numero_de_tarjeta : str) -> bool:
