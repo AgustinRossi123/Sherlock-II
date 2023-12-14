@@ -75,9 +75,15 @@ def sumar_digitos(lista_digitos : list[int]) -> int:
 def luhn(numero_de_tarjeta :  str) -> bool:
     pares = digitos_pares(numero_de_tarjeta)
     suma_pares = sumar_digitos( [x* 2 for x in pares] )
-    suma_impares = sum(digitos_impares(numero_de_tarjeta))
+    suma_impares = sumar_digitos(digitos_impares(numero_de_tarjeta))
     dig = (suma_pares + suma_impares)%10
-    return dig
+    aprobacion = False
+    if dig==0:
+        aprobacion = True
+    else:
+        aprobacion = False
+    return aprobacion
+    
 
 
 #Ejercicio 8
